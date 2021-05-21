@@ -28,6 +28,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off',
+    'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': 0,
   },

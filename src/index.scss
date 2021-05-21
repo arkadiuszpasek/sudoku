@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import "styles/colors";
+
+body {
+  margin: 0;
+  font-family: "KoHo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: $color-light;
+  color: $color-dark;
+}

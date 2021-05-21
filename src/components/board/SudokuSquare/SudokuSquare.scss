@@ -1,0 +1,14 @@
+@import "/src/styles/fonts";
+@import "/src/styles/colors";
+@import "/src/styles/vars";
+
+.sudoku-square {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $color-gray-d;
+  border-radius: $default-radius;
+}
+
+.sudoku-square-row {
+  display: flex;
+}

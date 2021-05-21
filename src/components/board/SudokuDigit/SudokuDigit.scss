@@ -1,0 +1,29 @@
+@import "/src/styles/common.scss";
+@import "/src/styles/vars";
+@import "/src/styles/colors";
+@import "/src/styles/fonts";
+
+.sudoku-digit {
+  @extend %centered;
+
+  width: $digit-square-size;
+  height: $digit-square-size;
+  border: 1px solid transparent;
+  font-size: $font-m;
+}
+
+.top-middle,
+.bottom-middle {
+  border-left: 1px solid $color-gray-d;
+  border-right: 1px solid $color-gray-d;
+}
+
+.center-left,
+.center-right {
+  border-top: 1px solid $color-gray-d;
+  border-bottom: 1px solid $color-gray-d;
+}
+
+.center-middle {
+  border: 1px solid $color-gray-d;
+}
