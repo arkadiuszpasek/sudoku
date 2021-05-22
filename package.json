@@ -1,5 +1,6 @@
 {
   "name": "sudoku",
+  "homepage": "https://arkadiuszpasek.github.io/sudoku",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +14,7 @@
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "classnames": "^2.3.1",
+    "gh-pages": "^3.1.0",
     "lodash": "^4.17.21",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
@@ -27,7 +29,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
