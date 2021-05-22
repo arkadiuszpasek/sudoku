@@ -1,0 +1,36 @@
+@import "/src/styles/colors";
+@import "/src/styles/vars";
+@import "/src/styles/common";
+@import "/src/styles/fonts";
+
+.button {
+  @extend %centered;
+  @extend %nonselectable;
+  font-size: $font-m;
+  cursor: pointer;
+  width: 160px;
+  height: 48px;
+  border-radius: $default-radius;
+}
+
+.button-normal {
+  background-color: $primary-m;
+  color: $color-light;
+  transition: background-color $trans-params;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: $primary-m-active;
+  }
+}
+
+.button-outlined {
+  border: 2px solid $primary-m;
+  color: $primary-m;
+  transition: all $trans-params;
+
+  &:hover {
+    border-color: $primary-m-active;
+    color: $primary-m-active;
+  }
+}

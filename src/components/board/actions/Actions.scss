@@ -1,0 +1,9 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 64px;
+
+  & > * {
+    margin: 0 16px;
+  }
+}

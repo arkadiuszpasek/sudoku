@@ -10,9 +10,10 @@
   width: $digit-square-size;
   height: $digit-square-size;
   border: 1px solid transparent;
-  font-size: $font-m;
-  background-color: $color-light;
+  background-color: $color-dark;
   cursor: pointer;
+  font: inherit;
+  font-size: $font-l;
 
   &:hover {
     & p {
@@ -22,7 +23,7 @@
 
   & p {
     transition: color $trans-params;
-    color: $primary-m;
+    color: $color-light;
   }
 }
 

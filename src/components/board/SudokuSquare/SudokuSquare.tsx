@@ -1,29 +1,47 @@
 import React from "react";
+import {
+  SudokuBoardSquare,
+  SudokuBoardValue,
+} from "../../../logic/sudoku/types";
 import { SudokuDigit } from "../SudokuDigit/SudokuDigit";
 import "./SudokuSquare.scss";
 
-export const SudokuSquare = ({ digits }: Props) => {
+interface Props {
+  digits: SudokuBoardSquare;
+  onDigitPicked(rowIdx: number, colIdx: number, value: SudokuBoardValue): void;
+}
+
+export const SudokuSquare = ({ digits, onDigitPicked }: Props) => {
+  const renderDigit = (
+    rowIdx: number,
+    colIdx: number,
+    position: React.ComponentProps<typeof SudokuDigit>["position"]
+  ) => {
+    return (
+      <SudokuDigit
+        digit={digits[rowIdx][colIdx]}
+        position={position}
+        onDigitPicked={(v) => onDigitPicked(rowIdx, colIdx, v)}
+      />
+    );
+  };
   return (
     <div className="sudoku-square">
       <div className="sudoku-square-row">
-        <SudokuDigit digit={digits[0][0]} position="top-left" />
-        <SudokuDigit digit={digits[0][1]} position="top-middle" />
-        <SudokuDigit digit={digits[0][2]} position="top-right" />
+        {renderDigit(0, 0, "top-left")}
+        {renderDigit(0, 1, "top-middle")}
+        {renderDigit(0, 2, "top-right")}
       </div>
       <div className="sudoku-square-row">
-        <SudokuDigit digit={digits[1][0]} position="center-left" />
-        <SudokuDigit digit={digits[1][1]} position="center-middle" />
-        <SudokuDigit digit={digits[1][2]} position="center-right" />
+        {renderDigit(1, 0, "center-left")}
+        {renderDigit(1, 1, "center-middle")}
+        {renderDigit(1, 2, "center-right")}
       </div>
       <div className="sudoku-square-row">
-        <SudokuDigit digit={digits[2][0]} position="bottom-left" />
-        <SudokuDigit digit={digits[2][1]} position="bottom-middle" />
-        <SudokuDigit digit={digits[2][2]} position="bottom-right" />
+        {renderDigit(2, 0, "bottom-left")}
+        {renderDigit(2, 1, "bottom-middle")}
+        {renderDigit(2, 2, "bottom-right")}
       </div>
     </div>
   );
 };
-
-interface Props {
-  digits: number[][];
-}

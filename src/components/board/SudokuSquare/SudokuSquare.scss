@@ -5,7 +5,7 @@
 .sudoku-square {
   display: flex;
   flex-direction: column;
-  border: 2px solid $color-gray-d;
+  border: 1px solid $color-light;
   border-radius: $default-radius;
 }
 

@@ -1,17 +1,27 @@
-import React, { useState } from "react";
-import "./SudokuDigit.scss";
-import classNames from "classnames";
 import { Grow } from "@material-ui/core";
+import classNames from "classnames";
+import React, { useState } from "react";
+import { SudokuBoardValue } from "../../../logic/sudoku/types";
 import { DigitPicker } from "../../pickers/DigitPicker/DigitPicker";
-import { generateSudokuBoard } from "../../../logic/sudoku/utils";
+import "./SudokuDigit.scss";
 
-export const SudokuDigit = ({ digit, position }: Props) => {
-  const [isPicking, setIsPicking] = useState(false);
+interface Props {
+  digit: SudokuBoardValue;
+  position: Style;
+  onDigitPicked(value: SudokuBoardValue): void;
+}
+
+export const SudokuDigit = ({ digit, position, onDigitPicked }: Props) => {
+  const [isPicking, setIsPicking] = useState<boolean>();
+  const handlePicked = (value: number | null) => {
+    setIsPicking(undefined);
+    onDigitPicked(value);
+  };
   const renderPicker = () => {
     return (
       <Grow in timeout={250}>
         <div className="sudoku-digit-picker">
-          <DigitPicker onPicked={(v) => console.log(generateSudokuBoard())} />
+          <DigitPicker onPicked={handlePicked} />
         </div>
       </Grow>
     );
@@ -24,9 +34,9 @@ export const SudokuDigit = ({ digit, position }: Props) => {
   return (
     <button
       type="button"
-      // onBlur={() => setTimeout(() => setIsPicking(false), 55)}
       onBlur={() => setIsPicking(false)}
       onFocus={() => setIsPicking(true)}
+      onClick={isPicking === undefined ? () => setIsPicking(true) : undefined}
       className={classNames("sudoku-digit", position)}
     >
       {isPicking && renderPicker()}
@@ -35,10 +45,6 @@ export const SudokuDigit = ({ digit, position }: Props) => {
   );
 };
 
-interface Props {
-  digit: number;
-  position: Style;
-}
 type Style =
   | "top-left"
   | "top-middle"
