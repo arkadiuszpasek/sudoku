@@ -29,6 +29,9 @@ module.exports = {
   rules: {
     'linebreak-style': 'off',
     'import/prefer-default-export': 'off',
+    'eslint-disable-next-line': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': 0,
   },

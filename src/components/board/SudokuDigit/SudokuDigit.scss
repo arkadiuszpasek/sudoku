@@ -5,11 +5,34 @@
 
 .sudoku-digit {
   @extend %centered;
+  position: relative;
 
   width: $digit-square-size;
   height: $digit-square-size;
   border: 1px solid transparent;
   font-size: $font-m;
+  background-color: $color-light;
+  cursor: pointer;
+
+  &:hover {
+    & p {
+      color: $primary-m-active;
+    }
+  }
+
+  & p {
+    transition: color $trans-params;
+    color: $primary-m;
+  }
+}
+
+.sudoku-digit-picker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  cursor: initial;
 }
 
 .top-middle,

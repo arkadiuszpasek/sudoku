@@ -1,5 +1,23 @@
+@import "./vars";
+@import "./colors";
+
 %centered {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+%pointerable {
+  cursor: pointer;
+  transition: color $trans-params;
+  color: $primary-m;
+
+  &:hover {
+    color: $primary-m-active;
+  }
+}
+
+%shadow {
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
 }

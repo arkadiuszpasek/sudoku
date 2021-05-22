@@ -1,0 +1,33 @@
+@import "/src/styles/common";
+@import "/src/styles/colors";
+@import "/src/styles/vars";
+
+.digit-picker {
+  @extend %shadow;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-color: $color-light;
+  border: 1px solid $color-gray-d;
+  border-radius: $default-radius;
+}
+
+.digit-picker-row {
+  display: flex;
+}
+
+.digit-picker-btn {
+  border: 1px solid $primary-m;
+  border-radius: $default-radius;
+  padding: 4px;
+  margin: 4px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  transition: all $trans-params;
+  &:hover {
+    background-color: $primary-m-active;
+    color: $color-light;
+  }
+}
