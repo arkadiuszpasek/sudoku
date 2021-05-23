@@ -1,0 +1,22 @@
+@import "/src/styles/vars";
+@import "/src/styles/fonts";
+@import "/src/styles/colors";
+@import "/src/styles/common";
+.text-input {
+  @extend %no-appearance;
+  padding: 4px 8px;
+  font-size: $font-s;
+  border-radius: $default-radius;
+  border: 1px solid $primary-m;
+  background-color: transparent;
+  transition: border-color $trans-params;
+  color: $color-light;
+
+  &::placeholder {
+    color: $color-gray-m;
+  }
+
+  &:focus {
+    border-color: $primary-m-active;
+  }
+}

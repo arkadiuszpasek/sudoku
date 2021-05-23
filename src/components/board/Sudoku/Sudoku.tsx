@@ -1,5 +1,6 @@
 import React from "react";
 import { useSudoku } from "../../../logic/sudoku/useSudoku";
+import { getSquareBySquareIdx } from "../../../logic/sudoku/utils";
 import { SudokuSquare } from "../SudokuSquare/SudokuSquare";
 import "./Sudoku.scss";
 
@@ -7,11 +8,12 @@ export const Sudoku = () => {
   const { board, updateSquare } = useSudoku();
 
   const renderSquare = (rowIdx: number, colIdx: number) => {
+    const square = getSquareBySquareIdx(board, rowIdx, colIdx);
     return (
       <SudokuSquare
-        digits={board[rowIdx][colIdx]}
+        sudokuValues={square}
         onDigitPicked={(rIdx, cIdx, value) =>
-          updateSquare(rowIdx, colIdx, rIdx, cIdx, value)
+          updateSquare(rowIdx * 3 + rIdx, colIdx * 3 + cIdx, value)
         }
       />
     );

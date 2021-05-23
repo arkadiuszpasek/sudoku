@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap");
 // @import url("https://fonts.googleapis.com/css2?family=KoHo:wght@200;300&family=Montserrat:wght@100&display=swap");
-@import "styles/colors";
-
+@import "/src/styles/colors";
+@import "/src/styles/vars";
 body {
   margin: 0;
   // font-family: "Montserrat", sans-serif;
@@ -11,4 +11,22 @@ body {
 
   background-color: $color-dark;
   color: $color-light;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.material-icons {
+  cursor: pointer;
+  color: $primary-m;
+  transition: color $trans-params;
+
+  &:hover {
+    color: $primary-m-active;
+  }
 }

@@ -18,19 +18,30 @@
   display: flex;
 }
 
-.digit-picker-btn {
+%btn-style {
   border: 1px solid $color-light;
   border-radius: $default-radius;
-  padding: 4px;
-  margin: 4px;
-  width: 24px;
-  height: 24px;
   cursor: pointer;
   font-size: $font-s;
-
   transition: all $trans-params;
   &:hover {
     border-color: $primary-m-active;
     color: $primary-m-active;
   }
+}
+
+.digit-picker-btn {
+  @extend %btn-style;
+  padding: 4px;
+  margin: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+.digit-picker-clear-btn {
+  @extend %btn-style;
+  margin: 4px;
+  padding: 4px;
+  height: 24px;
+  // width: 100%;
 }

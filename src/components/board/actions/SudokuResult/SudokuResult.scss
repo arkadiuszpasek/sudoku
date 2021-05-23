@@ -1,0 +1,23 @@
+@import "/src/styles/fonts";
+@import "/src/styles/colors";
+@import "/src/styles/vars";
+
+.sudoku-result {
+  padding: 16px 16px;
+  height: 0;
+  font-size: $font-l;
+  transition: height $trans-params;
+  text-decoration: underline;
+
+  &-danger {
+    color: $danger;
+  }
+
+  &-success {
+    color: $success;
+  }
+
+  &-showing {
+    height: 64px;
+  }
+}

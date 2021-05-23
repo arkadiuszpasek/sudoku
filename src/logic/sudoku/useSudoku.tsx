@@ -1,66 +1,56 @@
 import React, { useState } from "react";
-import { SudokuBoard } from "./types";
-import { generateSudokuBoard } from "./utils";
-
-interface SudokuHook {
-  board: SudokuBoard;
-  updateSquare(
-    squareRow: number,
-    squareCol: number,
-    digitRow: number,
-    digitCol: number,
-    value: number | null
-  ): void;
-  reset(): void;
-}
+import {
+  SudokuBoard,
+  SudokuBoardValue,
+  SudokuHook,
+  SudokuValidationResult,
+} from "./types";
+import { generateSudoku, validateSudoku } from "./utils";
 
 const useSudokuBoard = (): SudokuHook => {
-  const [board, setBoard] = useState<SudokuBoard>(generateSudokuBoard());
+  const [board, setBoard] = useState<SudokuBoard>(generateSudoku());
+  const [result, setResult] = useState<SudokuValidationResult>();
 
   const updateSquare = (
-    squareRow: number,
-    squareCol: number,
-    digitRow: number,
-    digitCol: number,
-    value: number | null
+    digitRowIdx: number,
+    digitColIdx: number,
+    value: SudokuBoardValue["value"]
   ) => {
     setBoard(
-      board.map((squaresR, squareRowIdx) => {
-        if (squareRowIdx !== squareRow) {
-          return squaresR;
+      board.map((digitR, digitRIdx) => {
+        if (digitRIdx !== digitRowIdx) {
+          return digitR;
         }
 
-        return squaresR.map((squareC, squareIdx) => {
-          if (squareCol !== squareIdx) {
-            return squareC;
+        return digitR.map((digitValue, digitIdx) => {
+          if (digitIdx !== digitColIdx) {
+            return digitValue;
           }
 
-          return squareC.map((digitR, digitRowIdx) => {
-            if (digitRowIdx !== digitRow) {
-              return digitR;
-            }
-
-            return digitR.map((digit, i) => {
-              if (i !== digitCol) {
-                return digit;
-              }
-
-              return value;
-            });
-          });
+          return { ...digitValue, value };
         });
       })
     );
   };
 
   const reset = () => {
-    setBoard(generateSudokuBoard());
+    setBoard(generateSudoku());
+    setResult(undefined);
+  };
+
+  const validate = () => {
+    const validation = validateSudoku(board);
+    setBoard(validation.board);
+    setResult(validation.result);
   };
 
   return {
     board,
+    setBoard,
     updateSquare,
     reset,
+    validate,
+    result,
   };
 };
 

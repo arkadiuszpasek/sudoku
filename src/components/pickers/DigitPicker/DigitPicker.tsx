@@ -2,7 +2,7 @@ import React from "react";
 import "./DigitPicker.scss";
 
 interface Props {
-  onPicked(digit: number): void;
+  onPicked(digit: number | null): void;
 }
 export const DigitPicker = ({ onPicked }: Props) => {
   const renderDigit = (digit: number) => {
@@ -32,6 +32,9 @@ export const DigitPicker = ({ onPicked }: Props) => {
         {renderDigit(7)}
         {renderDigit(8)}
         {renderDigit(9)}
+      </div>
+      <div className="digit-picker-clear-btn" onClick={() => onPicked(null)}>
+        Clear
       </div>
     </div>
   );

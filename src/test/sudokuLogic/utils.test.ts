@@ -1,5 +1,11 @@
+/* eslint-disable prefer-destructuring */
 import { uniq } from "lodash";
-import { generateRows, generateSudokuBoard } from "../../logic/sudoku/utils";
+import { SudokuValidationResult } from "../../logic/sudoku/types";
+import {
+  generateRows,
+  generateSudokuSolved,
+  validateSudoku,
+} from "../../logic/sudoku/utils";
 
 describe("Sudoku utils", () => {
   it("generateRows should generate 9 correct rows", () => {
@@ -11,15 +17,40 @@ describe("Sudoku utils", () => {
   });
 
   it("generateSudokuBoard should correctly generate board", () => {
-    const squares = generateSudokuBoard();
+    const sudoku = generateSudokuSolved();
 
-    expect(squares.length).toBe(3);
-    squares.forEach((squareRow) => {
-      expect(squareRow.length).toBe(3);
+    expect(sudoku.length).toBe(9);
+    sudoku.forEach((squareRow) => {
+      expect(squareRow.length).toBe(9);
+    });
+  });
 
-      squareRow.forEach((row) => {
-        expect(row.length).toBe(3);
-      });
+  describe("Validation", () => {
+    it("should highlight values that collide in row", () => {
+      const sudoku = generateSudokuSolved();
+      sudoku[0][0] = sudoku[0][2];
+      const { board, result } = validateSudoku(sudoku);
+
+      expect(result).toBe(SudokuValidationResult.Incorrect);
+      expect(board[0][0].hasError).toBe(true);
+    });
+
+    it("should highlight values that collide in column", () => {
+      const sudoku = generateSudokuSolved();
+      sudoku[4][0] = sudoku[0][0];
+      const { board, result } = validateSudoku(sudoku);
+
+      expect(result).toBe(SudokuValidationResult.Incorrect);
+      expect(board[4][0].hasError).toBe(true);
+    });
+
+    it("should highlight values that collide in same square", () => {
+      const sudoku = generateSudokuSolved();
+      sudoku[0][0] = sudoku[1][1];
+      const { board, result } = validateSudoku(sudoku);
+
+      expect(result).toBe(SudokuValidationResult.Incorrect);
+      expect(board[0][0].hasError).toBe(true);
     });
   });
 });

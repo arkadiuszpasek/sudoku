@@ -1,25 +1,32 @@
 import React from "react";
-import {
-  SudokuBoardSquare,
-  SudokuBoardValue,
-} from "../../../logic/sudoku/types";
+import { SudokuBoardValue } from "../../../logic/sudoku/types";
 import { SudokuDigit } from "../SudokuDigit/SudokuDigit";
+import { SudokuDigitNonEditable } from "../SudokuDigit/SudokuDigitNonEditable";
 import "./SudokuSquare.scss";
 
 interface Props {
-  digits: SudokuBoardSquare;
-  onDigitPicked(rowIdx: number, colIdx: number, value: SudokuBoardValue): void;
+  /** 3x3 array of sudoku values */
+  sudokuValues: SudokuBoardValue[][];
+  onDigitPicked(
+    rowIdx: number,
+    colIdx: number,
+    value: SudokuBoardValue["value"]
+  ): void;
 }
 
-export const SudokuSquare = ({ digits, onDigitPicked }: Props) => {
+export const SudokuSquare = ({ sudokuValues, onDigitPicked }: Props) => {
   const renderDigit = (
     rowIdx: number,
     colIdx: number,
     position: React.ComponentProps<typeof SudokuDigit>["position"]
   ) => {
+    const value = sudokuValues[rowIdx][colIdx];
+    if (!value.isEditable) {
+      return <SudokuDigitNonEditable digit={value} position={position} />;
+    }
     return (
       <SudokuDigit
-        digit={digits[rowIdx][colIdx]}
+        digit={sudokuValues[rowIdx][colIdx]}
         position={position}
         onDigitPicked={(v) => onDigitPicked(rowIdx, colIdx, v)}
       />

@@ -7,8 +7,8 @@ import "./SudokuDigit.scss";
 
 interface Props {
   digit: SudokuBoardValue;
-  position: Style;
-  onDigitPicked(value: SudokuBoardValue): void;
+  position: Position;
+  onDigitPicked(value: SudokuBoardValue["value"]): void;
 }
 
 export const SudokuDigit = ({ digit, position, onDigitPicked }: Props) => {
@@ -28,7 +28,7 @@ export const SudokuDigit = ({ digit, position, onDigitPicked }: Props) => {
   };
 
   const renderDigit = () => {
-    return <p>{digit}</p>;
+    return <p>{digit.value}</p>;
   };
 
   return (
@@ -37,7 +37,9 @@ export const SudokuDigit = ({ digit, position, onDigitPicked }: Props) => {
       onBlur={() => setIsPicking(false)}
       onFocus={() => setIsPicking(true)}
       onClick={isPicking === undefined ? () => setIsPicking(true) : undefined}
-      className={classNames("sudoku-digit", position)}
+      className={classNames("sudoku-digit", "sudoku-digit-editable", position, {
+        "sudoku-digit-error": digit.hasError,
+      })}
     >
       {isPicking && renderPicker()}
       {renderDigit()}
@@ -45,7 +47,7 @@ export const SudokuDigit = ({ digit, position, onDigitPicked }: Props) => {
   );
 };
 
-type Style =
+export type Position =
   | "top-left"
   | "top-middle"
   | "top-right"
