@@ -7,10 +7,12 @@ interface Props {
   result?: SudokuValidationResult;
 }
 export const SudokuResult = ({ result }: Props) => {
-  const renderText = (): string => {
-    return result === SudokuValidationResult.Correct
-      ? "Leapin' lizards! Sudoku is correct"
-      : "Son of a biscuit, something's wrong";
+  const renderText = () => {
+    return result === SudokuValidationResult.Correct ? (
+      <p>{"Leapin' lizards! Sudoku is correct"}</p>
+    ) : (
+      <p>{"Son of a biscuit! Something's wrong"}</p>
+    );
   };
 
   return (

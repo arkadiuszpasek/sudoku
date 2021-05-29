@@ -5,8 +5,7 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
-  background-color: $color-gray-d;
-  // border: 1px solid $color-light;
+  background-color: $color-gray-dark;
   border-radius: $default-radius;
   color: $color-light;
 }
@@ -21,6 +20,7 @@
   cursor: pointer;
   font-size: $font-small;
   transition: all $trans-params;
+
   &:hover {
     border-color: $color-primary-medium-active;
     color: $color-primary-medium-active;
@@ -40,5 +40,4 @@
   margin: 4px;
   padding: 4px;
   height: 24px;
-  // width: 100%;
 }

@@ -3,9 +3,9 @@
 .sudoku-result {
   padding: 16px 16px;
   height: 0;
-  font-size: $font-large;
+  font-size: $font-small;
   transition: height $trans-params;
-  text-decoration: underline;
+  width: 100%;
 
   &-danger {
     color: $color-danger;

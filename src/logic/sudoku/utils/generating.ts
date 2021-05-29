@@ -16,7 +16,7 @@ const hideValues = (rows: SudokuBoardValue[][]): SudokuBoardValue[][] => {
   const value = rows.map((row) => [
     ...row.map((val) => ({ value: val.value, isEditable: false })),
   ]);
-  for (let i = 0; i < config.sudokuHideRowsNumber; i += 1) {
+  for (let i = 0; i < config.sudokuHideDigits; i += 1) {
     const rowIdx = random(0, 8);
     const colIdx = random(0, 8);
 

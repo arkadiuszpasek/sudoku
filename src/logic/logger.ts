@@ -8,19 +8,19 @@ export interface Logger {
   error(...value: any[]): void;
 }
 class ConsoleLogger {
-  static log(...value: any[]): void {
+  log(...value: any[]): void {
     console.log(...value);
   }
 
-  static info(...value: any[]): void {
+  info(...value: any[]): void {
     console.info(...value);
   }
 
-  static warn(...value: any[]): void {
+  warn(...value: any[]): void {
     console.warn(...value);
   }
 
-  static error(...value: any[]): void {
+  error(...value: any[]): void {
     console.error(...value);
   }
 }

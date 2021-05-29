@@ -3,24 +3,22 @@
 .sudoku-input {
   display: flex;
   flex-direction: column;
-  margin: 8px;
+  width: 100%;
 }
 
 .sudoku-input-area {
   align-items: center;
   display: flex;
-  margin: 8px;
+  margin: 8px 0;
   overflow: hidden;
   height: 0;
   transition: height $trans-params;
 
-  
-  
   &-active {
     height: 48px;
   }
 
   & > * {
-    margin: 0 8px;
+    margin-right: 8px;
   }
 }
