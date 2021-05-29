@@ -3,16 +3,16 @@
 .sudoku-result {
   padding: 16px 16px;
   height: 0;
-  font-size: $font-l;
+  font-size: $font-large;
   transition: height $trans-params;
   text-decoration: underline;
 
   &-danger {
-    color: $danger;
+    color: $color-danger;
   }
 
   &-success {
-    color: $success;
+    color: $color-success;
   }
 
   &-showing {

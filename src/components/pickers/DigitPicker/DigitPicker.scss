@@ -19,11 +19,11 @@
   border: 1px solid $color-light;
   border-radius: $default-radius;
   cursor: pointer;
-  font-size: $font-s;
+  font-size: $font-small;
   transition: all $trans-params;
   &:hover {
-    border-color: $primary-m-active;
-    color: $primary-m-active;
+    border-color: $color-primary-medium-active;
+    color: $color-primary-medium-active;
   }
 }
 

@@ -7,19 +7,20 @@
 }
 
 .sudoku-input-area {
-  margin: 8px;
-  display: flex;
   align-items: center;
+  display: flex;
+  margin: 8px;
   overflow: hidden;
-
-  & > * {
-    margin: 0 8px;
-  }
-
   height: 0;
   transition: height $trans-params;
 
+  
+  
   &-active {
     height: 48px;
+  }
+
+  & > * {
+    margin: 0 8px;
   }
 }

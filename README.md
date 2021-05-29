@@ -1,16 +1,35 @@
-# sudoku
+# Sudoku
 
-### Running
+## Running
+
+#### See demo hosted [there](https://arkadiuszpasek.github.io/sudoku)
+
+#### Development
 
 ```
 npm install
 npm start
 ```
 
-### Testing
+#### Building & hosting locally
+
+```
+npm run build
+npm run server
+```
+
+# Improvement Roadmap
+
+- MUST-HAVE
+  - [Game generating](https://github.com/arkadiuszpasek/sudoku/issues/1)
+  - User notifications
+    - Notification about incorrect input for a custom game
+
+## Testing
 
 `npm run test`
-`npm run test -- -t 'testName'` - where `describe(testName)`
+
+`npm run test -- -t 'testName'` - where `describe('testName', () => ..)`
 
 Example input value
 
@@ -27,10 +46,3 @@ Example input value
   [1,null,null,null,null,null,null,null,null]
 ]
 ```
-
-### Improvement Roadmap
-
-- MUST-HAVE
-  - [Game generation](https://github.com/arkadiuszpasek/sudoku/issues/1)
-  - User notifications
-    - Notification about incorrect input for a custom game

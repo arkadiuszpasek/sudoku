@@ -2,7 +2,7 @@ import { Icon } from "@material-ui/core";
 import classNames from "classnames";
 import React, { useState } from "react";
 import { useSudoku } from "../../../../logic/sudoku/useSudoku";
-import { parseJsonStringToBoard } from "../../../../logic/sudoku/utils";
+import { parseJsonStringToBoard } from "../../../../logic/sudoku/utils/parsing";
 import { Button } from "../../../buttons/Button/Button";
 import { TextInput } from "../../../inputs/TextInput/TextInput";
 import "./SudokuInput.scss";

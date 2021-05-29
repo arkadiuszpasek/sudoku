@@ -3,30 +3,30 @@
 .button {
   @extend %centered;
   @extend %nonselectable;
-  font-size: $font-m;
+  font-size: $font-medium;
   cursor: pointer;
   padding: 8px 16px;
   border-radius: $default-radius;
 }
 
 .button-normal {
-  background-color: $primary-m;
+  background-color: $color-primary-medium;
   color: $color-light;
   transition: background-color $trans-params;
   border: 2px solid transparent;
 
   &:hover {
-    background-color: $primary-m-active;
+    background-color: $color-primary-medium-active;
   }
 }
 
 .button-outlined {
-  border: 2px solid $primary-m;
-  color: $primary-m;
+  border: 2px solid $color-primary-medium;
+  color: $color-primary-medium;
   transition: all $trans-params;
 
   &:hover {
-    border-color: $primary-m-active;
-    color: $primary-m-active;
+    border-color: $color-primary-medium-active;
+    color: $color-primary-medium-active;
   }
 }
