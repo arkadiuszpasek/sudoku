@@ -4,7 +4,7 @@
 ![Badge](https://img.shields.io/badge/Scss-9cf)
 ![Badge](https://img.shields.io/badge/lodash-9cf)
 ![Badge](https://img.shields.io/badge/MaterialUI-blueviolet)
-![Badge](https://img.shields.io/badge/Jest-yellow)
+![Badge](https://img.shields.io/badge/Jest-green)
 
 # Sudoku
 
