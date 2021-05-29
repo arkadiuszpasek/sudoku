@@ -1,22 +1,20 @@
-@import "/src/styles/vars";
-@import "/src/styles/fonts";
-@import "/src/styles/colors";
-@import "/src/styles/common";
+@import "/src/styles/styleguide";
+
 .text-input {
   @extend %no-appearance;
   padding: 4px 8px;
-  font-size: $font-s;
+  font-size: $font-small;
   border-radius: $default-radius;
-  border: 1px solid $primary-m;
+  border: 1px solid $color-primary-medium;
   background-color: transparent;
   transition: border-color $trans-params;
   color: $color-light;
 
   &::placeholder {
-    color: $color-gray-m;
+    color: $color-gray-medium;
   }
 
   &:focus {
-    border-color: $primary-m-active;
+    border-color: $color-primary-medium-active;
   }
 }

@@ -1,7 +1,6 @@
 {
   "name": "sudoku",
-  "homepage": "https://arkadiuszpasek.github.io/sudoku",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -31,7 +30,8 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +63,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "serve": "^11.3.2"
   }
 }

@@ -5,7 +5,8 @@ import {
   SudokuHook,
   SudokuValidationResult,
 } from "./types";
-import { generateSudoku, validateSudoku } from "./utils";
+import { generateSudoku } from "./utils/generating";
+import { validateSudoku } from "./utils/validation";
 
 const useSudokuBoard = (): SudokuHook => {
   const [board, setBoard] = useState<SudokuBoard>(generateSudoku());

@@ -2,7 +2,7 @@ import { Icon } from "@material-ui/core";
 import classNames from "classnames";
 import React, { useState } from "react";
 import { useSudoku } from "../../../../logic/sudoku/useSudoku";
-import { parseJsonStringToBoard } from "../../../../logic/sudoku/utils";
+import { parseJsonStringToBoard } from "../../../../logic/sudoku/utils/parsing";
 import { Button } from "../../../buttons/Button/Button";
 import { TextInput } from "../../../inputs/TextInput/TextInput";
 import "./SudokuInput.scss";
@@ -37,7 +37,11 @@ export const SudokuInput = () => {
           "sudoku-input-area-active": isInteracting,
         })}
       >
-        <TextInput value={value} onChange={setValue} />
+        <TextInput
+          value={value}
+          onChange={setValue}
+          placeholder={`"[1,null,5,..],[3,...],...]"`}
+        />
         <i onClick={handleSubmit}>
           <Icon>done</Icon>
         </i>

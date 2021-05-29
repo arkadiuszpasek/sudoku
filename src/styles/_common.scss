@@ -10,10 +10,10 @@
 %pointerable {
   cursor: pointer;
   transition: color $trans-params;
-  color: $primary-m;
+  color: $color-primary-medium;
 
   &:hover {
-    color: $primary-m-active;
+    color: $color-primary-medium-active;
   }
 }
 

@@ -1,3 +1,3 @@
 export const config = {
-  sudokuHideRowsNumber: 50,
+  sudokuHideDigits: 50,
 };

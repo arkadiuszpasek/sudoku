@@ -1,6 +1,6 @@
 import React from "react";
 import { useSudoku } from "../../../logic/sudoku/useSudoku";
-import { getSquareBySquareIdx } from "../../../logic/sudoku/utils";
+import { getSquareBySquareIdx } from "../../../logic/sudoku/utils/utils";
 import { SudokuSquare } from "../SudokuSquare/SudokuSquare";
 import "./Sudoku.scss";
 

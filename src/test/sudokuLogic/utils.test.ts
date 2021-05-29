@@ -1,11 +1,10 @@
-/* eslint-disable prefer-destructuring */
 import { uniq } from "lodash";
 import { SudokuValidationResult } from "../../logic/sudoku/types";
 import {
   generateRows,
   generateSudokuSolved,
   validateSudoku,
-} from "../../logic/sudoku/utils";
+} from "../../logic/sudoku/utils/utils";
 
 describe("Sudoku utils", () => {
   it("generateRows should generate 9 correct rows", () => {
@@ -26,7 +25,18 @@ describe("Sudoku utils", () => {
   });
 
   describe("Validation", () => {
-    it("should highlight values that collide in row", () => {
+    it("should not highlight invalid values on solved sudoku", () => {
+      const sudoku = generateSudokuSolved();
+      const { board, result } = validateSudoku(sudoku);
+
+      expect(result).toBe(SudokuValidationResult.Correct);
+      board.forEach(row => {
+        row.forEach(d => 
+          expect(d.hasError).toBeFalsy())
+      })
+    });
+
+    it("should highlight invalid values that collide in row", () => {
       const sudoku = generateSudokuSolved();
       sudoku[0][0] = sudoku[0][2];
       const { board, result } = validateSudoku(sudoku);
@@ -35,7 +45,7 @@ describe("Sudoku utils", () => {
       expect(board[0][0].hasError).toBe(true);
     });
 
-    it("should highlight values that collide in column", () => {
+    it("should highlight invalid values that collide in column", () => {
       const sudoku = generateSudokuSolved();
       sudoku[4][0] = sudoku[0][0];
       const { board, result } = validateSudoku(sudoku);
@@ -44,7 +54,7 @@ describe("Sudoku utils", () => {
       expect(board[4][0].hasError).toBe(true);
     });
 
-    it("should highlight values that collide in same square", () => {
+    it("should highlight invalid values that collide in same square", () => {
       const sudoku = generateSudokuSolved();
       sudoku[0][0] = sudoku[1][1];
       const { board, result } = validateSudoku(sudoku);

@@ -18,11 +18,11 @@ export interface SudokuHook {
   board: SudokuBoard;
   setBoard(board: SudokuBoard): void;
   result?: SudokuValidationResult;
+  reset(): void;
+  validate(): void;
   updateSquare(
     digitRowIdx: number,
     digitColIdx: number,
     value: SudokuBoardValue["value"]
   ): void;
-  reset(): void;
-  validate(): void;
 }
