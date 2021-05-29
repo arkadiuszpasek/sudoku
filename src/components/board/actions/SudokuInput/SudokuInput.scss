@@ -1,4 +1,4 @@
-@import "/src/styles/vars";
+@import "/src/styles/index";
 
 .sudoku-input {
   display: flex;
@@ -22,6 +22,4 @@
   &-active {
     height: 48px;
   }
-}
-.sudoku-input-area-input {
 }

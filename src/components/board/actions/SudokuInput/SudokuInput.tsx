@@ -37,7 +37,11 @@ export const SudokuInput = () => {
           "sudoku-input-area-active": isInteracting,
         })}
       >
-        <TextInput value={value} onChange={setValue} />
+        <TextInput
+          value={value}
+          onChange={setValue}
+          placeholder={`"[1,null,5,..],[3,...],...]"`}
+        />
         <i onClick={handleSubmit}>
           <Icon>done</Icon>
         </i>

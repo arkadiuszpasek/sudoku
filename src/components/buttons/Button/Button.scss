@@ -1,7 +1,4 @@
-@import "/src/styles/colors";
-@import "/src/styles/vars";
-@import "/src/styles/common";
-@import "/src/styles/fonts";
+@import "/src/styles/index";
 
 .button {
   @extend %centered;

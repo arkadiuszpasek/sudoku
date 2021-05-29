@@ -1,7 +1,4 @@
-@import "/src/styles/common.scss";
-@import "/src/styles/vars";
-@import "/src/styles/colors";
-@import "/src/styles/fonts";
+@import "/src/styles/index";
 
 .sudoku-digit {
   @extend %centered;
