@@ -41,7 +41,7 @@ npm run server
   - User notifications
     - Notification about incorrect input for a custom game
 - Nice-to-have
-  - [More clear ux for custom sudoku input](https://github.com/arkadiuszpasek/sudoku/issues/2)
+  - [More clear ux for custom sudoku input](https://github.com/arkadiuszpasek/sudoku/issues/3)
 
 ## Testing
 
