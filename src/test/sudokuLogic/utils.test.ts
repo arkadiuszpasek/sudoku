@@ -1,10 +1,7 @@
 import { uniq } from "lodash";
 import { SudokuValidationResult } from "../../logic/sudoku/types";
-import {
-  generateRows,
-  generateSudokuSolved,
-  validateSudoku,
-} from "../../logic/sudoku/utils/utils";
+import { generateRows, generateSudokuSolved } from "../../logic/sudoku/utils/generating";
+import { validateSudoku } from "../../logic/sudoku/utils/validation";
 
 describe("Sudoku utils", () => {
   it("generateRows should generate 9 correct rows", () => {

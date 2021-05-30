@@ -1,6 +1,7 @@
 {
   "name": "sudoku",
   "version": "1.0.0",
+  "homepage": "https://arkadiuszpasek.github.io/sudoku",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",

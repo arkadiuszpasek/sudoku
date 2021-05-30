@@ -12,12 +12,20 @@
 
 #### See demo hosted [there](https://arkadiuszpasek.github.io/sudoku)
 
+#
+
 #### Development
+
+To start working with the application:
 
 ```
 npm install
 npm start
 ```
+
+The project was built usign VSCode with Eslint & Prettier enforcing code style
+
+#
 
 #### Building & hosting locally
 
